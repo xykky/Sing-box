@@ -128,21 +128,18 @@ manage_packages() {
 
 # 获取ip
 get_realip() {
-    ip=$(curl -4 -sm 2 ip.sb)
-    ipv6() { curl -6 -sm 2 ip.sb; }
+    # 尝试源1
+    ip=$(curl -4 -s -m 5 ip.sb)
+    # 尝试源2 (备用)
     if [ -z "$ip" ]; then
-        echo "[$(ipv6)]"
-    elif curl -4 -sm 2 http://ipinfo.io/org | grep -qE 'Cloudflare|UnReal|AEZA|Andrei'; then
-        echo "[$(ipv6)]"
-    else
-        resp=$(curl -sm 8 "https://status.eooce.com/api/$ip" | jq -r '.status')
-        if [ "$resp" = "Available" ]; then
-            echo "$ip"
-        else
-            v6=$(ipv6)
-            [ -n "$v6" ] && echo "[$v6]" || echo "$ip"
-        fi
+        ip=$(curl -4 -s -m 5 ipinfo.io/ip)
     fi
+    # 尝试源3 (备用)
+    if [ -z "$ip" ]; then
+        ip=$(curl -4 -s -m 5 ifconfig.me)
+    fi
+    
+    echo "$ip"
 }
 
 # 处理防火墙
@@ -246,7 +243,7 @@ install_singbox() {
     openssl req -new -x509 -days 3650 -key "${work_dir}/private.key" -out "${work_dir}/cert.pem" -subj "/CN=bing.com"
     
     # 检测网络类型并设置DNS策略
-    dns_strategy=$(ping -c 1 -W 3 8.8.8.8 >/dev/null 2>&1 && echo "prefer_ipv4" || (ping -c 1 -W 3 2001:4860:4860::8888 >/dev/null 2>&1 && echo "prefer_ipv6" || echo "prefer_ipv4"))
+    dns_strategy="ipv4_only"
 
    # 生成配置文件
 cat > "${config_dir}" << EOF
