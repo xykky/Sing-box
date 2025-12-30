@@ -367,8 +367,7 @@ cat > "${config_dir}" << EOF
       "server": "engage.cloudflareclient.com",
       "server_port": 2408,
       "local_address": [
-        "172.16.0.2/32",
-        "2606:4700:110:851f:4da3:4e2c:cdbf:2ecf/128"
+        "172.16.0.2/32"
       ],
       "private_key": "eAx8o6MJrH4KE7ivPFFCa4qvYw5nJsYHCBQXPApQX1A=",
       "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
