@@ -396,7 +396,7 @@ cat > "${config_dir}" << EOF
     "rules": [
       {
         "rule_set": ["openai", "netflix"],
-        "outbound": "wireguard-out"
+        "outbound": "direct"
       }
     ],
     "final": "direct"
