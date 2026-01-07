@@ -384,44 +384,16 @@ cat > "${config_dir}" << EOF
         "download_detour": "direct"
       },
       {
-        "tag": "google",
+        "tag": "netflix",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geosite/google.srs",
-        "download_detour": "direct"
-      },
-      {
-        "tag": "spotify",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geosite/spotify.srs",
-        "download_detour": "direct"
-      },
-      {
-        "tag": "meta",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geosite/meta.srs",
-        "download_detour": "direct"
-      },
-      {
-        "tag": "sonyliv",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geosite/sonyliv.srs",
-        "download_detour": "direct"
-      },
-      {
-        "tag": "kocowa",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geosite/kocowa.srs",
+        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geosite/netflix.srs",
         "download_detour": "direct"
       }
     ],
     "rules": [
       {
-        "rule_set": ["openai", "google", "spotify", "meta", "sonyliv", "kocowa"],
+        "rule_set": ["openai", "netflix"],
         "outbound": "wireguard-out"
       }
     ],
