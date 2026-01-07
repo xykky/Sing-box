@@ -384,16 +384,16 @@ cat > "${config_dir}" << EOF
         "download_detour": "direct"
       },
       {
-        "tag": "netflix",
+        "tag": "google",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geosite/netflix.srs",
+        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geosite/google.srs",
         "download_detour": "direct"
       }
     ],
     "rules": [
       {
-        "rule_set": ["openai", "netflix"],
+        "rule_set": ["openai", "google"],
         "outbound": "wireguard-out"
       }
     ],
