@@ -376,71 +376,72 @@ cat > "${config_dir}" << EOF
     }
   ],
   "route": {
-    "rule_set": [
-      // 1. OpenAI (包含 Sora)
-      {
-        "tag": "openai",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geosite/openai.srs",
-        "download_detour": "direct"
-      },
-      // 2. Google (包含 Gemini)
-      {
-        "tag": "google",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geosite/google.srs",
-        "download_detour": "direct"
-      },
-      // 3. Spotify (包含注册)
-      {
-        "tag": "spotify",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geosite/spotify.srs",
-        "download_detour": "direct"
-      },
-      // 4. Meta (包含 Meta AI)
-      {
-        "tag": "meta",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geosite/meta.srs",
-        "download_detour": "direct"
-      },
-      // 5. SonyLIV
-      {
-        "tag": "sonyliv",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geosite/sonyliv.srs",
-        "download_detour": "direct"
-      },
-      // 6. KOCOWA
-      {
-        "tag": "kocowa",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geosite/kocowa.srs",
-        "download_detour": "direct"
-      }
-    ],
-    "rules": [
-      {
-        "rule_set": [
-          "openai",
-          "google",
-          "spotify",
-          "meta",
-          "sonyliv",
-          "kocowa"
-        ],
-        "outbound": "wireguard-out"
-      }
-    ],
-    "final": "direct"
-  }
+    "rule_set": [
+      // 1. OpenAI (包含 Sora)
+      {
+        "tag": "openai",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geosite/openai.srs",
+        "download_detour": "direct"
+      },
+      // 2. Google (包含 Gemini)
+      {
+        "tag": "google",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geosite/google.srs",
+        "download_detour": "direct"
+      },
+      // 3. Spotify (包含注册)
+      {
+        "tag": "spotify",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geosite/spotify.srs",
+        "download_detour": "direct"
+      },
+      // 4. Meta (包含 Meta AI)
+      {
+        "tag": "meta",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geosite/meta.srs",
+        "download_detour": "direct"
+      },
+      // 5. SonyLIV
+      {
+        "tag": "sonyliv",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geosite/sonyliv.srs",
+        "download_detour": "direct"
+      },
+      // 6. KOCOWA
+      {
+        "tag": "kocowa",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geosite/kocowa.srs",
+        "download_detour": "direct"
+      }
+    ],
+    "rules": [
+      {
+        "rule_set": [
+          "openai",
+          "netflix",
+          "google",
+          "spotify",
+          "meta",
+          "sonyliv",
+          "kocowa"
+        ],
+        "outbound": "wireguard-out"
+      }
+    ],
+    "final": "direct"
+  }
 }
 EOF
 }
